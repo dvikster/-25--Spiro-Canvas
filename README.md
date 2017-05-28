@@ -1,2 +1,2 @@
-# -25--Spiro-Canvas
-В25- Спирограф Canvas
+# D-25--Spiro-Canvas
+D25- Спирограф Canvas

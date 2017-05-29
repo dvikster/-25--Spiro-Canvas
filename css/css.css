@@ -4,6 +4,12 @@
     border: 2px solid #2bbbad;
     display: block;
 }
+#canvas2{
+    width: 600px;
+    height: 600px;
+    border: 2px solid #2bbbad;
+    display: block;
+}
 .container{
     margin-top: 100px;
 }

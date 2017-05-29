@@ -18,26 +18,20 @@
               <p>Фигура, получаемая с помощью простейшего спирографа из двух кругов, когда маленький (радиуса r) с отверстием
             на расстоянии d от центра вращается в большом (радиуса R), называется гипотрохоидой.</p>
             <p>Радиус большого статического круга</p>
-
             <p class="range-field">
                 <input type="range" min="10" max="50" value="10" id="static_circle">
             </p>
-
             <p>Радиус маленького вращающегося круга</p>
-
             <p class="range-field">
                 <input type="range" min="-50" max="50" value="-50" id="mobile_circle">
             </p>
-
             <p>Расстоянии d от центра маленького круга</p>
-
             <p class="range-field">
                 <input type="range" min="20" max="50" value="20" id="tracing_stick">
             </p>
-
-
             <p>
                 <button class="waves-effect waves-light btn" id="button">нарисовать</button>
+
             </p>
         </div>
         <div class="col s12 m12 l8">
@@ -45,7 +39,19 @@
         </div>
     </div>
 </div>
-
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12 l4">
+            <p>Спираль Архимеда</p>
+            <p><button class="waves-effect waves-light btn" id="arhimed">нарисовать</button></p>
+            <p><button class="waves-effect waves-light btn" id="stop">остановить</button></p>
+            <p><button class="waves-effect waves-light btn" id="reset">сбросить</button></p>
+        </div>
+        <div class="col s12 m12 l8">
+            <canvas id="canvas2" width="600" height="600"></canvas>
+        </div>
+    </div>
+</div>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.min.js"></script>
 <script src="js/js.js"></script>

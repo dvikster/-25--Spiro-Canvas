@@ -2,8 +2,9 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var pi = Math.PI;
 ctx.fillStyle='#2bbbad';
-
-var x, y, R, r, d, u;
+ctx3 = canvas.getContext('2d');
+ctx4 = canvas.getContext('2d');
+var x, y, xR, yR, xr, yr, R, r, d, u;
 //u = 0;
 //r = 80; маленький круг радиуса r  с отверстием на расстоянии d от центра вращается в большом (радиуса R), называется гипотрохоидой.
 //R= 50;
@@ -14,26 +15,38 @@ R = 65;
 d = 100;
 
 document.getElementById('button').onclick= function(){
-     R = document.getElementById('static_circle').value;
-     r = document.getElementById('mobile_circle').value;
-     d = document.getElementById('tracing_stick').value;
-    console.log(R);
-    console.log(r);
-    console.log(d);
-    //console.log();
+    R = document.getElementById('static_circle').value;
+    r = document.getElementById('mobile_circle').value;
+    d = document.getElementById('tracing_stick').value;
     u = 0;
-    //r = 100;
-    //R = 50;
-    //d = 50;
     ctx.clearRect(0,0,600,600);
 };
+document.getElementById('show').onclick = function showCircle(){
+
+    ctx.beginPath();
+    xR = (R)*Math.cos(u);
+    yR = (R)*Math.sin(u);
+    ctx.fillStyle='red';
+    ctx.fillRect(2*xR+300,2*yR+300, 2,2);
+
+    ctx.beginPath();
+    xr = (r)*Math.cos(u);
+    yr = (r)*Math.sin(u);
+    ctx.fillStyle='blue';
+    ctx.fillRect(2*xr+300,2*yr+300, 2,2);
+
+    u = u+ 0.01;
+    setTimeout(showCircle, 2);
+};
+
 
 function spiro(){
+    ctx.beginPath();
 	x = (R-r)*Math.cos(u)+d*Math.cos(u*(R-r)/r);
 	y = (R-r)*Math.sin(u)-d*Math.sin(u*(R-r)/r);
 	ctx.fillRect(2*x+300,2*y+300, 2,2);
     u = u+ 0.02;
-	setTimeout(spiro, 10);
+	setTimeout(spiro, 2);
 }
 
 spiro();
